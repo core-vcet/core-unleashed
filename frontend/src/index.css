@@ -102,6 +102,9 @@ img {
   padding: clamp(0.9rem, 1.8vh, 1.3rem) clamp(0.9rem, 1.6vw, 1.25rem);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.22);
   z-index: 2;
+  opacity: 0;
+  transform: rotate(var(--card-rot, 0deg));
+  animation: roadmapCardIn 0.65s cubic-bezier(0.22, 1, 0.36, 1) forwards;
 }
 
 .rules-step-badge {
@@ -135,6 +138,22 @@ img {
 
 .rules-link {
   display: none;
+}
+
+.rules-step-1 {
+  animation-delay: 0.12s;
+}
+
+.rules-step-2 {
+  animation-delay: 0.42s;
+}
+
+.rules-step-3 {
+  animation-delay: 0.72s;
+}
+
+.rules-step-4 {
+  animation-delay: 1.02s;
 }
 
 .rules-roadmap-svg {
@@ -314,11 +333,9 @@ img {
     position: absolute;
     width: min(42%, 28rem);
     min-height: clamp(6.75rem, 11vh, 8.5rem);
-    opacity: 0;
     transform: rotate(var(--card-rot, 0deg));
     background: rgba(0, 0, 0, 0.48);
     backdrop-filter: blur(1px);
-    animation: roadmapCardIn 0.65s cubic-bezier(0.22, 1, 0.36, 1) forwards;
   }
 
   .rules-step-1 {
