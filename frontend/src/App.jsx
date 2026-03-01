@@ -1,6 +1,6 @@
 import { Routes, Route } from 'react-router-dom'
 import Home from "./pages/Home"
-import AboutCoRE from "./pages/aboutCoRE"
+import About from "./pages/about"
 import Rules from "./components/rules"
 import Round2 from "./components/round2"
 import LazySection from "./components/LazySection"
@@ -20,7 +20,7 @@ function WhatIsUnleashedSection() {
           className="text-base sm:text-lg md:text-xl lg:text-2xl leading-relaxed mb-4 sm:mb-5"
           style={{ fontFamily: "Poppins", fontWeight: 500 }}
         >
-          CoRE <span className="text-[#E8B88A]" style={{ fontFamily: "Blowbrush", fontWeight: 400 }}>UNLEASHED</span> is a high-octane 36-hour innovation marathon organized by the Center of Research Excellency (CoRE) in proud collaboration with the IEEE VCET Student Branch and our industry partner, Codezyg.
+          CoRE <span className="text-[#E8B88A]" style={{ fontFamily: "Blowbrush", fontWeight: 400 }}>UNLEASHED</span> is a high-octane 36-hour innovation marathon organized by the Center of Research Excellency (CoRE) in proud collaboration with the IEEE VCET Student Branch and our industry partner, Codezyng.
         </p>
 
         <p
@@ -50,7 +50,7 @@ function LandingPage() {
 
       {/* Section 3 - The UNLEASHED Advantage (Lazy load when scrolling) */}
       <LazySection className="snap-start snap-always h-[100dvh] event-section-bg text-white">
-        <AboutCoRE />
+        <About />
       </LazySection>
 
       {/* Section 4 - Rules (Round 1) (Lazy load when scrolling) */}
