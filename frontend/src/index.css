@@ -46,6 +46,11 @@ img {
   font-weight: 400;
 }
 
+.section-heading-size {
+  font-size: clamp(2rem, 4vw, 4.5rem);
+  line-height: 1.2;
+}
+
 /* Rules Page Styles */
 .rules-page {
   position: relative;
@@ -57,7 +62,7 @@ img {
   background-color: transparent;
   padding: clamp(2rem, 4vh, 6rem) clamp(1.25rem, 3vw, 4.5rem);
   color: #fff;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Inter', sans-serif;
   line-height: 1.75;
 }
 
@@ -125,7 +130,7 @@ img {
 
 .rules-step-text {
   margin: 0;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: clamp(1rem, 1.35vw, 1.25rem);
   line-height: 1.7;
 }
@@ -185,7 +190,7 @@ img {
 }
 
 .rules-subheading {
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-weight: 700;
   font-size: clamp(1.25rem, 2.5vw, 2rem);
   line-height: 1.3;
@@ -233,7 +238,7 @@ img {
   cursor: pointer;
   appearance: none;
   border-radius: 8px;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-weight: 700;
   font-size: clamp(0.9rem, 1.2vw, 1.15rem);
   transition: background-color 0.3s ease;
@@ -254,7 +259,7 @@ img {
   background-color: transparent;
   padding: clamp(2rem, 4vh, 6rem) clamp(1.25rem, 3vw, 4.5rem);
   color: #fff;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Inter', sans-serif;
   line-height: 1.75;
 }
 
@@ -271,10 +276,10 @@ img {
 .timeline-heading {
   font-family: 'GomariceNoContinue', sans-serif;
   font-weight: 700;
-  font-size: clamp(2rem, 3.8vw, 3.6rem);
+  font-size: clamp(2rem, 4vw, 4.5rem);
   line-height: 1.3;
   margin-bottom: clamp(2rem, 3vh, 3rem);
-  color: #E8B88A;
+  color: #fff;
 }
 
 .timeline-roadmap {
@@ -323,11 +328,26 @@ img {
 
 .timeline-left {
   font-family: 'GomariceNoContinue', sans-serif;
-  color: #E8B88A;
+  color: #fff;
   font-size: clamp(1.2rem, 2.2vw, 2.55rem);
   font-weight: 700;
   text-align: right;
   line-height: 1.15;
+}
+
+.timeline-left-text,
+.timeline-left-text-suffix {
+  font-family: 'GomariceNoContinue', sans-serif;
+}
+
+.timeline-left-number {
+  font-family: 'Blowbrush', sans-serif;
+  font-weight: 400;
+  letter-spacing: 0.01em;
+}
+
+.timeline-left-text-suffix {
+  font-size: 0.78em;
 }
 
 .timeline-left-day {
@@ -362,17 +382,34 @@ img {
 
 .timeline-right-sub {
   margin-top: clamp(0.25rem, 0.8vh, 0.45rem);
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: clamp(0.95rem, 1.25vw, 1.35rem);
   font-weight: 600;
 }
 
-.timeline-group:first-of-type .timeline-item:nth-child(1) { --item-delay: 0.2s; }
-.timeline-group:first-of-type .timeline-item:nth-child(2) { --item-delay: 0.38s; }
-.timeline-group:first-of-type .timeline-item:nth-child(3) { --item-delay: 0.56s; }
-.timeline-group:last-of-type .timeline-item:nth-child(1) { --item-delay: 0.82s; }
-.timeline-group:last-of-type .timeline-item:nth-child(2) { --item-delay: 1s; }
-.timeline-group:last-of-type .timeline-item:nth-child(3) { --item-delay: 1.18s; }
+.timeline-group:first-of-type .timeline-item:nth-child(1) {
+  --item-delay: 0.2s;
+}
+
+.timeline-group:first-of-type .timeline-item:nth-child(2) {
+  --item-delay: 0.38s;
+}
+
+.timeline-group:first-of-type .timeline-item:nth-child(3) {
+  --item-delay: 0.56s;
+}
+
+.timeline-group:last-of-type .timeline-item:nth-child(1) {
+  --item-delay: 0.82s;
+}
+
+.timeline-group:last-of-type .timeline-item:nth-child(2) {
+  --item-delay: 1s;
+}
+
+.timeline-group:last-of-type .timeline-item:nth-child(3) {
+  --item-delay: 1.18s;
+}
 
 @keyframes timelineSpineGrow {
   from {

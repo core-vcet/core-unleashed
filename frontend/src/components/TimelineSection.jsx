@@ -50,13 +50,22 @@ const TimelineSection = () => {
 
           <div className="timeline-group" role="group" aria-label="April 24 schedule">
             <article className="timeline-item timeline-item-day" role="listitem">
-              <div className="timeline-left timeline-left-day">April 24th — 04:00 PM</div>
+              <div className="timeline-left timeline-left-day">
+                <span className="timeline-left-text">April</span>{' '}
+                <span className="timeline-left-number">24</span><span className="timeline-left-text-suffix">th</span>{' '}
+                <span className="timeline-left-text">—</span>{' '}
+                <span className="timeline-left-number">04:00</span>{' '}
+                <span className="timeline-left-text">PM</span>
+              </div>
               <span className="timeline-dot" aria-hidden="true" />
               <div className="timeline-right timeline-right-title">Check-in</div>
             </article>
 
             <article className="timeline-item" role="listitem">
-              <div className="timeline-left">05:00 PM</div>
+              <div className="timeline-left">
+                <span className="timeline-left-number">05:00</span>{' '}
+                <span className="timeline-left-text">PM</span>
+              </div>
               <span className="timeline-dot" aria-hidden="true" />
               <div className="timeline-right">
                 <div className="timeline-right-title">Event Inauguration</div>
@@ -65,7 +74,10 @@ const TimelineSection = () => {
             </article>
 
             <article className="timeline-item" role="listitem">
-              <div className="timeline-left">07:00 PM</div>
+              <div className="timeline-left">
+                <span className="timeline-left-number">07:00</span>{' '}
+                <span className="timeline-left-text">PM</span>
+              </div>
               <span className="timeline-dot" aria-hidden="true" />
               <div className="timeline-right timeline-right-title">Hackathon Commences</div>
             </article>
@@ -73,19 +85,31 @@ const TimelineSection = () => {
 
           <div className="timeline-group timeline-group-gap" role="group" aria-label="April 26 schedule">
             <article className="timeline-item timeline-item-day" role="listitem">
-              <div className="timeline-left timeline-left-day">April 26th — 07:00 AM</div>
+              <div className="timeline-left timeline-left-day">
+                <span className="timeline-left-text">April</span>{' '}
+                <span className="timeline-left-number">26</span><span className="timeline-left-text-suffix">th</span>{' '}
+                <span className="timeline-left-text">—</span>{' '}
+                <span className="timeline-left-number">07:00</span>{' '}
+                <span className="timeline-left-text">AM</span>
+              </div>
               <span className="timeline-dot" aria-hidden="true" />
               <div className="timeline-right timeline-right-title">Hackathon Concludes</div>
             </article>
 
             <article className="timeline-item" role="listitem">
-              <div className="timeline-left">09:00 AM</div>
+              <div className="timeline-left">
+                <span className="timeline-left-number">09:00</span>{' '}
+                <span className="timeline-left-text">AM</span>
+              </div>
               <span className="timeline-dot" aria-hidden="true" />
               <div className="timeline-right timeline-right-title">Evaluation</div>
             </article>
 
             <article className="timeline-item" role="listitem">
-              <div className="timeline-left">12:00 PM</div>
+              <div className="timeline-left">
+                <span className="timeline-left-number">12:00</span>{' '}
+                <span className="timeline-left-text">PM</span>
+              </div>
               <span className="timeline-dot" aria-hidden="true" />
               <div className="timeline-right timeline-right-title">Valedictory Ceremony</div>
             </article>

@@ -72,13 +72,13 @@
 }
 
 .about-core-subheading-advantage {
-  font-size: clamp(2rem, 3.5vw, 3.5rem);
+  font-size: clamp(2rem, 4vw, 4.5rem);
   line-height: 1.2;
 }
 
 .about-core-paragraph,
 .about-core-list-item {
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: clamp(1.05rem, 1.5vw, 1.35rem);
   line-height: 1.8;
   overflow-wrap: break-word;
@@ -115,7 +115,7 @@
 
 .about-core-card-text {
   margin: 0;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: clamp(1.05rem, 1.5vw, 1.35rem);
   line-height: 1.8;
   overflow-wrap: break-word;
