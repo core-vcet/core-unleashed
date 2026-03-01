@@ -582,3 +582,93 @@ img {
     animation-delay: 2.55s;
   }
 }
+
+.section6-heading {
+  opacity: 0;
+  transform: translateY(-10px) scale(0.99);
+  animation: section6HeadingIn 0.6s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.section6-card {
+  opacity: 0;
+  transform: translateY(18px) scale(0.98);
+  animation: section6CardIn 0.65s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  will-change: transform, opacity;
+}
+
+.section6-card-1 {
+  animation-delay: 0.12s;
+}
+
+.section6-card-2 {
+  animation-delay: 0.3s;
+}
+
+.section6-card-3 {
+  animation-delay: 0.45s;
+}
+
+.section6-card-4 {
+  animation-delay: 0.6s;
+}
+
+.section6-card-5 {
+  animation-delay: 0.75s;
+}
+
+.section6-card-6 {
+  animation-delay: 0.9s;
+}
+
+.section6-card-7 {
+  animation-delay: 1.05s;
+}
+
+.section6-link {
+  transition: transform 180ms ease, color 180ms ease;
+}
+
+.section6-link:hover {
+  transform: translateX(2px);
+}
+
+@keyframes section6HeadingIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px) scale(0.99);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes section6CardIn {
+  from {
+    opacity: 0;
+    transform: translateY(18px) scale(0.98);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .section6-heading,
+  .section6-card {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+
+  .section6-link {
+    transition: none;
+  }
+
+  .section6-link:hover {
+    transform: none;
+  }
+}
