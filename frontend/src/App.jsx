@@ -2,7 +2,7 @@ import { Routes, Route } from 'react-router-dom'
 import Home from "./pages/Home"
 import About from "./pages/AboutSection"
 import HowToUnleash from "./components/HowToUnleashSection"
-import Round2 from "./components/RoundTwo"
+import TimelineSection from "./components/TimelineSection"
 import LazySection from "./components/LazySection"
 
 function WhatIsUnleashedSection() {
@@ -58,9 +58,9 @@ function LandingPage() {
         <HowToUnleash />
       </LazySection>
 
-      {/* Section 5 - Round 2 (Lazy load when scrolling) */}
+      {/* Section 5 - Timeline (Lazy load when scrolling) */}
       <LazySection className="snap-start snap-always h-[100dvh] event-section-bg">
-        <Round2 />
+        <TimelineSection />
       </LazySection>
     </div>
   );

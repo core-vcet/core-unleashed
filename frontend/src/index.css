@@ -243,8 +243,8 @@ img {
   background-color: #d9a87b;
 }
 
-/* Round2 Page Styles */
-.round2-page {
+/* Timeline Section Styles */
+.timeline-page {
   position: relative;
   height: 100%;
   min-height: 100%;
@@ -258,7 +258,7 @@ img {
   line-height: 1.75;
 }
 
-.round2-content {
+.timeline-content {
   position: relative;
   z-index: 10;
   width: 100%;
@@ -266,7 +266,7 @@ img {
   margin: 0 auto;
 }
 
-.round2-heading {
+.timeline-heading {
   font-family: 'Poppins', sans-serif;
   font-weight: 700;
   font-size: clamp(1.5rem, 3vw, 2.5rem);
@@ -275,7 +275,7 @@ img {
   color: #E8B88A;
 }
 
-.round2-list ul {
+.timeline-list ul {
   display: flex;
   flex-direction: column;
   gap: clamp(1rem, 2vh, 1.5rem);
@@ -283,14 +283,14 @@ img {
   list-style-type: disc;
 }
 
-.round2-list li {
+.timeline-list li {
   font-size: clamp(1rem, 1.3vw, 1.25rem);
   line-height: 1.8;
   overflow-wrap: break-word;
   word-break: break-word;
 }
 
-.round2-list strong {
+.timeline-list strong {
   font-weight: 700;
   color: #E8B88A;
 }
@@ -307,12 +307,12 @@ img {
   }
 
   .rules-page,
-  .round2-page {
+  .timeline-page {
     padding: clamp(1.5rem, 3vh, 2rem) clamp(1rem, 4vw, 1.5rem);
   }
 
   .rules-content,
-  .round2-content {
+  .timeline-content {
     max-width: 100%;
   }
 

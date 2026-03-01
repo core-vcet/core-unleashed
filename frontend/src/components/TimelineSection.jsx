@@ -1,13 +1,13 @@
 import React from 'react'
 import '../assets/fonts/fonts.css'
 
-const Round2 = () => {
+const TimelineSection = () => {
   return (
-    <main className="round2-page">
-      <section className="round2-content h-full flex flex-col">
-        <h2 className="round2-heading">ROUND 2: </h2>
+    <main className="timeline-page">
+      <section className="timeline-content h-full flex flex-col">
+        <h2 className="timeline-heading">TIMELINE: </h2>
 
-        <div className="round2-list">
+        <div className="timeline-list">
           <ul>
             <li>
               <strong>Duration:</strong> 36 Hours (Non-stop).
@@ -47,4 +47,4 @@ const Round2 = () => {
   )
 }
 
-export default Round2
+export default TimelineSection
