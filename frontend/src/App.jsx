@@ -248,8 +248,8 @@ function LandingPage() {
       </LazySection>
 
       {/* Section 3 - The UNLEASHED Advantage (Lazy load when scrolling) */}
-      <LazySection className="snap-start snap-always h-[100dvh] event-section-bg text-white">
-        <About />
+      <LazySection className="snap-start snap-always h-[400dvh] event-section-bg text-white relative">
+        <About scrollContainerRef={scrollContainerRef} />
       </LazySection>
 
       {/* Section 4 - How to UNLEASH? (Lazy load when scrolling) */}

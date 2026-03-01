@@ -183,16 +183,20 @@ const HowToUnleash = () => {
           <article className="rules-step-card rules-step-1" role="listitem" ref={(element) => { stepRefs.current[0] = element }}>
             <div className="rules-step-badge">01</div>
             <p className="rules-step-text">
-              <span className="rules-step-title">Form Your Squad!:</span> Gather your most reliable teammates.
+              <span className="rules-step-title">Form Your Squad!</span> Gather your most reliable teammates.
             </p>
           </article>
+
+          <div className="rules-mobile-connector rules-mobile-connector-1" aria-hidden="true" />
 
           <article className="rules-step-card rules-step-2" role="listitem" ref={(element) => { stepRefs.current[1] = element }}>
             <div className="rules-step-badge">02</div>
             <p className="rules-step-text">
-              <span className="rules-step-title">Pick a Challenge:</span> Choose from our diverse technical tracks.
+              <span className="rules-step-title">Pick a Challenge:</span> Choose from one of five industry problem statements.
             </p>
           </article>
+
+          <div className="rules-mobile-connector rules-mobile-connector-2" aria-hidden="true" />
 
           <article className="rules-step-card rules-step-3" role="listitem" ref={(element) => { stepRefs.current[2] = element }}>
             <div className="rules-step-badge">03</div>
@@ -200,6 +204,8 @@ const HowToUnleash = () => {
               <span className="rules-step-title">Build Non-Stop:</span> 36 hours to code, design, and deploy.
             </p>
           </article>
+
+          <div className="rules-mobile-connector rules-mobile-connector-3" aria-hidden="true" />
 
           <article className="rules-step-card rules-step-4" role="listitem" ref={(element) => { stepRefs.current[3] = element }}>
             <div className="rules-step-badge">04</div>
