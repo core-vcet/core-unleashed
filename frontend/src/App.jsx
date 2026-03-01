@@ -7,25 +7,57 @@ import TimelineSection from "./components/TimelineSection"
 import LazySection from "./components/LazySection"
 
 function WhatIsUnleashedSection() {
+  const sectionRef = useRef(null)
+  const isInViewRef = useRef(false)
+  const [animationRun, setAnimationRun] = useState(0)
+
+  useEffect(() => {
+    if (!sectionRef.current) {
+      return
+    }
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting && !isInViewRef.current) {
+          isInViewRef.current = true
+          setAnimationRun((previous) => previous + 1)
+        }
+
+        if (!entry.isIntersecting) {
+          isInViewRef.current = false
+        }
+      },
+      {
+        threshold: 0.6,
+      }
+    )
+
+    observer.observe(sectionRef.current)
+
+    return () => {
+      observer.disconnect()
+    }
+  }, [])
+
   return (
-    <section className="h-full w-full flex items-center justify-center px-5 sm:px-8 md:px-12 lg:px-16 py-10 sm:py-12 md:py-14">
-      <div className="w-full max-w-6xl text-white">
+    <section ref={sectionRef} className="h-full w-full flex items-center justify-center px-5 sm:px-8 md:px-12 lg:px-16 py-10 sm:py-12 md:py-14 overflow-hidden">
+      <div key={animationRun} className="w-full max-w-6xl text-white section2-animated">
         <h2
-          className="section-heading-size leading-tight mb-4 sm:mb-5 md:mb-6"
+          className="section-heading-size leading-tight mb-4 sm:mb-5 md:mb-6 section2-heading"
           style={{ fontFamily: "GomariceNoContinue", fontWeight: 700 }}
         >
           What is CoRE <span className="unleashed-word">UNLEASHED</span>?
         </h2>
 
         <p
-          className="text-base sm:text-lg md:text-xl lg:text-2xl leading-relaxed mb-4 sm:mb-5"
+          className="text-base sm:text-lg md:text-xl lg:text-2xl leading-relaxed mb-4 sm:mb-5 section2-copy section2-copy-1"
           style={{ fontFamily: "Inter", fontWeight: 500 }}
         >
           CoRE <span className="unleashed-word">UNLEASHED</span> is a high-octane 36-hour innovation marathon organized by the Center of Research Excellency (CoRE) in proud collaboration with the IEEE VCET Student Branch and our industry partner, Codezyng.
         </p>
 
         <p
-          className="text-base sm:text-lg md:text-xl lg:text-2xl leading-relaxed"
+          className="text-base sm:text-lg md:text-xl lg:text-2xl leading-relaxed section2-copy section2-copy-2"
           style={{ fontFamily: "Inter", fontWeight: 500 }}
         >
           Taking place from April 24th to 26th, 2026, at VCET, Puttur, this event is designed to be the ultimate testing ground for student developers, designers, and problem-solvers. We’re providing the platform; you provide the code that breaks the status quo.
