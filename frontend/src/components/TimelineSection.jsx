@@ -115,6 +115,10 @@ const TimelineSection = () => {
             </article>
           </div>
         </div>
+
+        <p className="timeline-note">
+          *This timeline is subject to changes. Any updates will be communicated to the finalists and reflected here.
+        </p>
       </section>
     </main>
   )
