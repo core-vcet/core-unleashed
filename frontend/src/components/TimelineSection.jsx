@@ -1,45 +1,94 @@
-import React from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import '../assets/fonts/fonts.css'
 
 const TimelineSection = () => {
+  const sectionRef = useRef(null)
+  const isInViewRef = useRef(false)
+  const [animationRun, setAnimationRun] = useState(0)
+
+  useEffect(() => {
+    if (!sectionRef.current) {
+      return
+    }
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting && !isInViewRef.current) {
+          isInViewRef.current = true
+          setAnimationRun((previous) => previous + 1)
+          return
+        }
+
+        if (!entry.isIntersecting) {
+          isInViewRef.current = false
+        }
+      },
+      {
+        threshold: 0.6,
+      }
+    )
+
+    observer.observe(sectionRef.current)
+
+    return () => {
+      observer.disconnect()
+    }
+  }, [])
+
   return (
-    <main className="timeline-page">
-      <section className="timeline-content h-full flex flex-col">
-        <h2 className="timeline-heading">TIMELINE: </h2>
+    <main className="timeline-page" ref={sectionRef}>
+      <section className="timeline-content section-fade-content">
+        <h2 className="timeline-heading">TIMELINE</h2>
 
-        <div className="timeline-list">
-          <ul>
-            <li>
-              <strong>Duration:</strong> 36 Hours (Non-stop).
-            </li>
-            <li>
-              <strong>Challenge:</strong> 5 distinct Problem Statements will be revealed on the spot.
-            </li>
-            <li>
-              <strong>Task:</strong> Teams must choose one problem statement and build a working prototype within the 36-hour window.
-            </li>
-            <li>
-              <strong>Venue:</strong> VCET Campus.
-            </li>
-          </ul>
-        </div>
+        <div
+          key={animationRun}
+          className="timeline-roadmap"
+          role="list"
+          aria-label="Event timeline"
+        >
+          <div className="timeline-spine" aria-hidden="true" />
 
-        <div className="flex-1 flex items-center justify-center mt-12 sm:mt-14 md:mt-16">
-          <div className="w-full sm:w-auto px-4 sm:px-0 flex flex-col sm:flex-row gap-3 sm:gap-4 md:gap-6 justify-center items-stretch sm:items-center">
-            <button
-              className="w-full sm:w-auto bg-white text-black px-6 sm:px-10 md:px-14 lg:px-16 py-2.5 sm:py-3 md:py-4 lg:py-5 rounded-lg text-sm sm:text-base md:text-xl lg:text-2xl hover:bg-gray-100 transition-colors"
-              style={{ fontFamily: 'Poppins', fontWeight: 700 }}
-              onClick={() => window.open('https://drive.google.com/file/d/1_8RhqN2ud7jOgF6RCR6AhRcBuWhIibHF/view?usp=sharing', '_blank', 'noopener,noreferrer')}
-            >
-              Download Brochure
-            </button>
-            <button
-              className="w-full sm:w-auto bg-[#E8B88A] text-black px-6 sm:px-10 md:px-14 lg:px-16 py-2.5 sm:py-3 md:py-4 lg:py-5 rounded-lg text-sm sm:text-base md:text-xl lg:text-2xl hover:bg-[#d9a87b] transition-colors"
-              style={{ fontFamily: 'Poppins', fontWeight: 700 }}
-              onClick={() => window.open('https://corevcet.wixsite.com/core/unleashed', '_blank', 'noopener,noreferrer')}
-            >
-              Register Now
-            </button>
+          <div className="timeline-group" role="group" aria-label="April 24 schedule">
+            <article className="timeline-item timeline-item-day" role="listitem">
+              <div className="timeline-left timeline-left-day">April 24th — 04:00 PM</div>
+              <span className="timeline-dot" aria-hidden="true" />
+              <div className="timeline-right timeline-right-title">Check-in</div>
+            </article>
+
+            <article className="timeline-item" role="listitem">
+              <div className="timeline-left">05:00 PM</div>
+              <span className="timeline-dot" aria-hidden="true" />
+              <div className="timeline-right">
+                <div className="timeline-right-title">Event Inauguration</div>
+                <div className="timeline-right-sub">(suprises in store!)</div>
+              </div>
+            </article>
+
+            <article className="timeline-item" role="listitem">
+              <div className="timeline-left">07:00 PM</div>
+              <span className="timeline-dot" aria-hidden="true" />
+              <div className="timeline-right timeline-right-title">Hackathon Commences</div>
+            </article>
+          </div>
+
+          <div className="timeline-group timeline-group-gap" role="group" aria-label="April 26 schedule">
+            <article className="timeline-item timeline-item-day" role="listitem">
+              <div className="timeline-left timeline-left-day">April 26th — 07:00 AM</div>
+              <span className="timeline-dot" aria-hidden="true" />
+              <div className="timeline-right timeline-right-title">Hackathon Concludes</div>
+            </article>
+
+            <article className="timeline-item" role="listitem">
+              <div className="timeline-left">09:00 AM</div>
+              <span className="timeline-dot" aria-hidden="true" />
+              <div className="timeline-right timeline-right-title">Evaluation</div>
+            </article>
+
+            <article className="timeline-item" role="listitem">
+              <div className="timeline-left">12:00 PM</div>
+              <span className="timeline-dot" aria-hidden="true" />
+              <div className="timeline-right timeline-right-title">Valedictory Ceremony</div>
+            </article>
           </div>
         </div>
       </section>
