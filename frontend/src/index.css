@@ -33,7 +33,7 @@ img {
 }
 
 .event-section-bg {
-  background-image: url('./assets/Desktop.png');
+  background-image: url('./assets/Background Landscape.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -299,7 +299,7 @@ img {
 @media (max-width: 768px) {
 
   .event-section-bg {
-    background-image: url('./assets/Mobile.png');
+    background-image: url('./assets/Background Potrait.png');
     background-size: cover;
     background-position: top center;
     background-repeat: no-repeat;
