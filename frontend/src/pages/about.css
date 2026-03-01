@@ -71,6 +71,11 @@
   margin: 0;
 }
 
+.about-core-subheading-advantage {
+  font-size: clamp(2rem, 3.5vw, 3.5rem);
+  line-height: 1.2;
+}
+
 .about-core-paragraph,
 .about-core-list-item {
   font-family: 'Poppins', sans-serif;
@@ -94,6 +99,29 @@
   letter-spacing: 0.01em;
 }
 
+.about-core-cards {
+  display: grid;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  gap: clamp(0.75rem, 1.8vh, 1.5rem);
+  width: 100%;
+}
+
+.about-core-card {
+  border: 1px solid rgba(232, 184, 138, 0.45);
+  background: rgba(0, 0, 0, 0.28);
+  border-radius: 14px;
+  padding: clamp(0.9rem, 1.8vh, 1.4rem) clamp(1rem, 2vw, 1.5rem);
+}
+
+.about-core-card-text {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  font-size: clamp(1.05rem, 1.5vw, 1.35rem);
+  line-height: 1.8;
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+
 .about-core-strong {
   font-family: 'GomariceNoContinue', sans-serif;
   font-weight: bold;
@@ -106,6 +134,12 @@
   font-family: 'Blowbrush', sans-serif;
   font-weight: normal;
   color: #E8B88A;
+}
+
+@media (min-width: 900px) {
+  .about-core-cards {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
 }
 
 @media (max-width: 480px) {
