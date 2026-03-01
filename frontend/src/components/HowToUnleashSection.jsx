@@ -2,9 +2,12 @@ import React, { useCallback, useEffect, useRef, useState } from 'react'
 import '../assets/fonts/fonts.css'
 
 const HowToUnleash = () => {
+  const sectionRef = useRef(null)
   const journeyRef = useRef(null)
   const stepRefs = useRef([])
   const [connectors, setConnectors] = useState([])
+  const [animationRun, setAnimationRun] = useState(0)
+  const isInViewRef = useRef(false)
 
   const getCenter = (rect) => ({
     x: rect.left + rect.width / 2,
@@ -119,16 +122,52 @@ const HowToUnleash = () => {
       resizeObserver.disconnect()
       window.removeEventListener('resize', updateConnectors)
     }
-  }, [updateConnectors])
+  }, [updateConnectors, animationRun])
+
+  useEffect(() => {
+    if (!sectionRef.current) {
+      return
+    }
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting && !isInViewRef.current) {
+          isInViewRef.current = true
+          setConnectors([])
+          setAnimationRun((previous) => previous + 1)
+          return
+        }
+
+        if (!entry.isIntersecting) {
+          isInViewRef.current = false
+        }
+      },
+      {
+        threshold: 0.6,
+      }
+    )
+
+    observer.observe(sectionRef.current)
+
+    return () => {
+      observer.disconnect()
+    }
+  }, [])
 
   return (
-    <main className="rules-page">
+    <main className="rules-page" ref={sectionRef}>
       <section className="rules-content">
         <h1 className="rules-heading">
           How to "<span className="unleashed-word">UNLEASH</span>"?
         </h1>
 
-        <div className="rules-journey" role="list" aria-label="How to Unleash steps" ref={journeyRef}>
+        <div
+          key={animationRun}
+          className="rules-journey"
+          role="list"
+          aria-label="How to Unleash steps"
+          ref={journeyRef}
+        >
           <svg className="rules-roadmap-svg" aria-hidden="true" width="100%" height="100%" preserveAspectRatio="none">
             {connectors.map((connector) => (
               <path
