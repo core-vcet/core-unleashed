@@ -632,6 +632,41 @@ img {
   transform: translateX(2px);
 }
 
+.section2-heading {
+  opacity: 0;
+  transform: translateY(-16px) scale(0.985);
+  animation: section2HeadingIn 0.8s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  position: relative;
+}
+
+.section2-heading::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -0.18em;
+  width: min(16rem, 48vw);
+  height: 2px;
+  background: linear-gradient(90deg, rgba(232, 184, 138, 0), rgba(232, 184, 138, 0.95), rgba(232, 184, 138, 0));
+  transform-origin: left center;
+  transform: scaleX(0);
+  opacity: 0;
+  animation: section2LineSweep 0.72s ease-out 0.42s forwards;
+}
+
+.section2-copy {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: section2CopyIn 0.72s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.section2-copy-1 {
+  animation-delay: 0.22s;
+}
+
+.section2-copy-2 {
+  animation-delay: 0.42s;
+}
+
 @keyframes section6HeadingIn {
   from {
     opacity: 0;
@@ -641,6 +676,44 @@ img {
   to {
     opacity: 1;
     transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes section2HeadingIn {
+  from {
+    opacity: 0;
+    transform: translateY(-16px) scale(0.985);
+    filter: blur(3px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0);
+  }
+}
+
+@keyframes section2CopyIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes section2LineSweep {
+  from {
+    opacity: 0;
+    transform: scaleX(0);
+  }
+
+  to {
+    opacity: 1;
+    transform: scaleX(1);
   }
 }
 
@@ -657,6 +730,21 @@ img {
 }
 
 @media (prefers-reduced-motion: reduce) {
+
+  .section2-heading,
+  .section2-copy {
+    animation: none;
+    opacity: 1;
+    transform: none;
+    filter: none;
+  }
+
+  .section2-heading::after {
+    animation: none;
+    opacity: 1;
+    transform: scaleX(1);
+  }
+
   .section6-heading,
   .section6-card {
     animation: none;
