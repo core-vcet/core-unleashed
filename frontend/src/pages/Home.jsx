@@ -1,7 +1,7 @@
 import LazyImage from "../components/LazyImage";
 import { useImagePreloader } from "../utils/preloader";
-import image from "../assets/background_desktop.png";
-import background_mobile from "../assets/background_mobile.png";
+import homeBackgroundLandscape from "../assets/Home Background Landscape.png";
+import homeBackgroundPortrait from "../assets/Home Background Potrait.png";
 import core_logo from "../assets/core_logo.png";
 import ieee_logo from "../assets/ieee_logo.png";
 import vcet_logo from "../assets/vcet_logo.png";
@@ -10,7 +10,7 @@ import core_text from "../assets/core_text.svg";
 
 const Home = () => {
   // Preload critical images for the Home section
-  const criticalImages = [image, background_mobile, core_text];
+  const criticalImages = [homeBackgroundLandscape, homeBackgroundPortrait, core_text];
   const { isLoading } = useImagePreloader(criticalImages);
 
   // Show minimal loading state for critical assets
@@ -28,13 +28,13 @@ const Home = () => {
     <div className="relative min-h-screen h-screen overflow-hidden bg-black">
       {/* Background image - mobile version */}
       <img
-        src={background_mobile}
+        src={homeBackgroundPortrait}
         alt="Background"
         className="absolute inset-0 w-full h-screen object-cover sm:hidden"
       />
       {/* Background image - tablet/desktop version with shrinking mechanism */}
       <img
-        src={image}
+        src={homeBackgroundLandscape}
         alt="Background"
         className="hidden sm:block absolute inset-0 w-full h-screen sm:object-cover object-top"
         style={{ objectFit: "fill" }}
