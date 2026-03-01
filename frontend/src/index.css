@@ -40,6 +40,12 @@ img {
   background-attachment: fixed;
 }
 
+.unleashed-word {
+  font-family: 'Blowbrush', sans-serif;
+  color: #E8B88A;
+  font-weight: 400;
+}
+
 /* Rules Page Styles */
 .rules-page {
   position: relative;
@@ -76,6 +82,52 @@ img {
   display: flex;
   flex-direction: column;
   gap: clamp(1.5rem, 2.5vh, 2.5rem);
+}
+
+.rules-journey {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  gap: clamp(0.85rem, 1.8vh, 1.35rem);
+}
+
+.rules-step-card {
+  display: flex;
+  align-items: flex-start;
+  gap: clamp(0.75rem, 1.5vw, 1.1rem);
+  border: 1px solid rgba(232, 184, 138, 0.42);
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 14px;
+  padding: clamp(0.9rem, 1.8vh, 1.3rem) clamp(0.9rem, 1.6vw, 1.25rem);
+}
+
+.rules-step-badge {
+  flex-shrink: 0;
+  min-width: clamp(2rem, 3vw, 2.5rem);
+  height: clamp(2rem, 3vw, 2.5rem);
+  border-radius: 999px;
+  border: 1px solid #E8B88A;
+  background: rgba(232, 184, 138, 0.14);
+  color: #E8B88A;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'GomariceNoContinue', sans-serif;
+  font-size: clamp(0.85rem, 1.1vw, 1rem);
+  line-height: 1;
+}
+
+.rules-step-text {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  font-size: clamp(1rem, 1.35vw, 1.25rem);
+  line-height: 1.7;
+}
+
+.rules-step-title {
+  font-family: 'GomariceNoContinue', sans-serif;
+  font-weight: 700;
+  color: #E8B88A;
 }
 
 .rules-subheading {
@@ -208,5 +260,16 @@ img {
   .rules-content,
   .round2-content {
     max-width: 100%;
+  }
+}
+
+@media (min-width: 900px) {
+  .rules-journey {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .rules-step-card:nth-child(2),
+  .rules-step-card:nth-child(4) {
+    transform: translateY(clamp(0.35rem, 1vh, 0.7rem));
   }
 }

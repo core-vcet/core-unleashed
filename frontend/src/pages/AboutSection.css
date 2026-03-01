@@ -130,12 +130,6 @@
   color: #E8B88A;
 }
 
-.about-core-unleashed {
-  font-family: 'Blowbrush', sans-serif;
-  font-weight: normal;
-  color: #E8B88A;
-}
-
 @media (min-width: 900px) {
   .about-core-cards {
     grid-template-columns: repeat(3, minmax(0, 1fr));

@@ -1,5 +1,5 @@
 import React from 'react';
-import './about.css';
+import './AboutSection.css';
 
 const About = () => {
   return (
@@ -9,7 +9,7 @@ const About = () => {
         <div className="about-core-text-content">
           <section className="about-core-block about-core-block-advantage">
             <h3 className="about-core-subheading about-core-subheading-advantage">
-              The <span className="about-core-unleashed">UNLEASHED</span> Advantage
+              The <span className="unleashed-word">UNLEASHED</span> Advantage
             </h3>
 
             <div className="about-core-cards" role="list" aria-label="Unleashed advantages">

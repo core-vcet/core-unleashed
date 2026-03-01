@@ -81,9 +81,8 @@ const Home = () => {
             className="w-28 sm:w-32 md:w-36 lg:w-40 mb-2 sm:mb-3"
           />
           <h1
-            className="text-[#E8B88A] text-5xl sm:text-7xl md:text-8xl lg:text-9xl xl:text-[10rem] tracking-wide"
+            className="unleashed-word text-5xl sm:text-7xl md:text-8xl lg:text-9xl xl:text-[10rem] tracking-wide"
             style={{
-              fontFamily: "Blowbrush",
               textShadow: "2px 2px 4px rgba(0,0,0,0.3)",
             }}
           >

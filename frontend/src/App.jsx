@@ -1,8 +1,8 @@
 import { Routes, Route } from 'react-router-dom'
 import Home from "./pages/Home"
-import About from "./pages/about"
-import Rules from "./components/rules"
-import Round2 from "./components/round2"
+import About from "./pages/AboutSection"
+import HowToUnleash from "./components/HowToUnleashSection"
+import Round2 from "./components/RoundTwo"
 import LazySection from "./components/LazySection"
 
 function WhatIsUnleashedSection() {
@@ -13,14 +13,14 @@ function WhatIsUnleashedSection() {
           className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl leading-tight mb-4 sm:mb-5 md:mb-6"
           style={{ fontFamily: "GomariceNoContinue", fontWeight: 700 }}
         >
-          What is CoRE <span className="text-[#E8B88A]" style={{ fontFamily: "Blowbrush", fontWeight: 400 }}>UNLEASHED</span>?
+          What is CoRE <span className="unleashed-word">UNLEASHED</span>?
         </h2>
 
         <p
           className="text-base sm:text-lg md:text-xl lg:text-2xl leading-relaxed mb-4 sm:mb-5"
           style={{ fontFamily: "Poppins", fontWeight: 500 }}
         >
-          CoRE <span className="text-[#E8B88A]" style={{ fontFamily: "Blowbrush", fontWeight: 400 }}>UNLEASHED</span> is a high-octane 36-hour innovation marathon organized by the Center of Research Excellency (CoRE) in proud collaboration with the IEEE VCET Student Branch and our industry partner, Codezyng.
+          CoRE <span className="unleashed-word">UNLEASHED</span> is a high-octane 36-hour innovation marathon organized by the Center of Research Excellency (CoRE) in proud collaboration with the IEEE VCET Student Branch and our industry partner, Codezyng.
         </p>
 
         <p
@@ -53,9 +53,9 @@ function LandingPage() {
         <About />
       </LazySection>
 
-      {/* Section 4 - Rules (Round 1) (Lazy load when scrolling) */}
+      {/* Section 4 - How to UNLEASH? (Lazy load when scrolling) */}
       <LazySection className="snap-start snap-always h-[100dvh] event-section-bg">
-        <Rules />
+        <HowToUnleash />
       </LazySection>
 
       {/* Section 5 - Round 2 (Lazy load when scrolling) */}
