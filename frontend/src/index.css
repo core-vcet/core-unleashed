@@ -110,6 +110,7 @@ img {
 }
 
 .top-marquee {
+  position: relative;
   overflow: hidden;
   border: 1px solid rgba(232, 184, 138, 0.45);
   border-radius: 999px;
@@ -127,6 +128,11 @@ img {
   animation: topMarqueeScroll 18s linear infinite;
 }
 
+.top-marquee-group {
+  display: flex;
+  flex-shrink: 0;
+}
+
 .top-marquee-message {
   display: flex;
   align-items: baseline;
@@ -141,6 +147,12 @@ img {
   font-family: 'GomariceNoContinue', sans-serif;
   font-size: clamp(0.72rem, 2.1vw, 0.95rem);
   text-shadow: 0 1px 8px rgba(0, 0, 0, 0.55);
+}
+
+.top-marquee-measure {
+  position: absolute;
+  visibility: hidden;
+  pointer-events: none;
 }
 
 @media (max-width: 390px) {
